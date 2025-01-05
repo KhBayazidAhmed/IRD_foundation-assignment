@@ -3,8 +3,8 @@
 @tailwind utilities;
 /* Define your custom color variables */
 :root {
-  --color-primary: #868686; /* Dark gray */
-  --color-secondary: #1fa45b; /* Green */
+  --color-secondary: #868686; /* Dark gray */
+  --color-primary: #1fa45b; /* Green */
   --color-light-gray: #e2e2e2; /* Light gray */
   --color-very-light-gray: #f9f9f9; /* Very light gray */
   --color-light-blue: #e8f0f5; /* Light blue */

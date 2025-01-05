@@ -14,7 +14,7 @@ const me_quran = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "IRD Foundation - assignment",
+  title: "Dua &amp; Ruqyah | All Duas Collection - assignment",
   description: "IRD Foundation - assignment",
 };
 
@@ -25,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${me_quran.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${me_quran.variable} antialiased bg-light-blue`}
+      >
         {children}
       </body>
     </html>
