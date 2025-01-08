@@ -6,6 +6,7 @@ import "./globals.css";
 
 const inter = Inter({
   display: "swap",
+  subsets: ["latin"],
   variable: "--font-inter",
 });
 const me_quran = localFont({
@@ -14,7 +15,7 @@ const me_quran = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dua &amp; Ruqyah | All Duas Collection - assignment",
+  title: "Dua & Ruqyah | All Duas Collection - assignment",
   description: "IRD Foundation - assignment",
 };
 

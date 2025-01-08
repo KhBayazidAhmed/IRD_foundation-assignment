@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 const settingsItems = [
   {
@@ -15,7 +16,7 @@ const settingsItems = [
 ];
 export default function SettingSection() {
   return (
-    <div className="w-[18%] bg-white rounded-2xl p-4 h-[84vh]">
+    <div className="w-[18%] bg-white rounded-2xl p-4 ">
       <h2 className="text-xl  py-4 text-center font-inter">Settings</h2>
       <div className="flex flex-col gap-4 ">
         {settingsItems.map((item) => (
@@ -24,7 +25,7 @@ export default function SettingSection() {
             className="flex bg-veryLightGray gap-2 rounded-md p-3  items-center "
           >
             <div className="bg-lightBlue rounded-full w-9 h-9 flex items-center justify-center">
-              <img src={item.iconPath} alt="icon" />
+              <Image width={20} height={20} src={item.iconPath} alt="icon" />
             </div>
             <h2 className="text-secondary ">{item.title}</h2>
           </div>
@@ -32,14 +33,24 @@ export default function SettingSection() {
         <div>
           <div className="bg-veryLightGray border-l-4 border-primary rounded-md rounded-b-none p-3 flex gap-2  items-center">
             <div className="bg-lightBlue  rounded-full w-9 h-9 flex items-center justify-center fill-primary">
-              <img src="/assets/nav/alldua.svg" alt="icon" />
+              <Image
+                width={20}
+                height={20}
+                src="/assets/nav/alldua.svg"
+                alt="icon"
+              />
             </div>
-            <h2 className="text-primary ">Appearance Settings</h2>
+            <h2 className="text-primary text-nowrap ">Appearance Settings</h2>
           </div>
           <div className="border border-t-0 rounded-md rounded-t-none p-3 flex gap-2  items-center justify-between">
             <h2 className="text-secondary">Night Mode </h2>
             <div className="flex items-center gap-2 cursor-pointer">
-              <img src="/assets/icons/buttonOffSwitch.svg" alt="" />
+              <Image
+                width={30}
+                height={30}
+                src="/assets/icons/buttonOffSwitch.svg"
+                alt=""
+              />
             </div>
           </div>
         </div>
