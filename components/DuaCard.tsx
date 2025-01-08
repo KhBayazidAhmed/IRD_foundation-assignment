@@ -41,7 +41,7 @@ export default function DuaCard({ dua }: { dua: Dua }) {
       <div className="flex flex-row items-center justify-between px-6">
         {dua.audio && (
           <div className="py-4 flex flex-row items-center xs:w-full xs:gap-x-4">
-            <AudioPlayer audioUrl={dua.audio} />
+            <AudioPlayer />
 
             <div className="hidden">
               <Image
