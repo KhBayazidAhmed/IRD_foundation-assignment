@@ -21,7 +21,7 @@ interface SubCategory {
   no_of_dua: number;
 }
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
-
+export const revalidate = 100000;
 export async function generateStaticParams() {
   const data = (await runQuery("SELECT * FROM category")) as Category[];
 
@@ -37,7 +37,6 @@ export default async function page({
 }: {
   searchParams: SearchParams;
 }) {
-  // Wait for searchParams to be resolved
   const params = await searchParams;
   const catId = params?.cat_id as string | undefined;
   const data = (await runQuery(

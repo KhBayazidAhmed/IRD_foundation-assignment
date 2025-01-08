@@ -3,7 +3,11 @@ import Image from "next/image";
 export default function AudioPlayer({ audioUrl }: { audioUrl: string }) {
   return (
     <div>
-      <audio src={audioUrl} controls className="hidden"></audio>
+      <audio
+        src={audioUrl.replaceAll("http", "https")}
+        controls
+        className="hidden"
+      ></audio>
       <div className="flex flex-row items-center gap-x-3 xs:w-full">
         <Image
           width={40}

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import NavBar from "@/components/NavBar";
 import SettingSection from "@/components/SettingSection";
 import { runQuery } from "@/DB/queryRunner";
+export const revalidate = 100000;
 
 export default async function Template({
   children,
