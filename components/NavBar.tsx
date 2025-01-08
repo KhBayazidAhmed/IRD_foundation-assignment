@@ -11,7 +11,7 @@ export default function NavBar() {
         {navBarIcons.map((icon) => (
           <div
             key={icon.link}
-            className="flex flex-col items-center bg-light-blue h-10 w-10 rounded-full justify-center"
+            className="flex flex-col items-center bg-lightBlue h-10 w-10 rounded-full justify-center"
           >
             <Image src={icon.src} alt={icon.link} width={20} height={20} />
           </div>
