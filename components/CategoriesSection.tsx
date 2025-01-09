@@ -37,7 +37,7 @@ export default function CategoriesSection({
   );
 
   return (
-    <div className="bg-white rounded-xl w-[35%]">
+    <div className="bg-white rounded-xl w-[35%] md:w-[40%]  hidden sm:flex flex-col  ">
       <h2 className="bg-primary rounded-md rounded-b-none text-white text-center py-3 text-lg">
         Categories
       </h2>

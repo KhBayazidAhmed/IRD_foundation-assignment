@@ -18,7 +18,7 @@ export default async function Template({
   return (
     <main className="flex align-center">
       <NavBar />
-      <div className="w-full px-6">
+      <div className="w-full lg:px-6 px-3">
         <Header />
         <section className="flex justify-between mt-3 h-[84vh] gap-2 ">
           <CategoriesSection subCat={subCat} data={data} dua={dua} />

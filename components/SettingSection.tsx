@@ -16,7 +16,7 @@ const settingsItems = [
 ];
 export default function SettingSection() {
   return (
-    <div className="w-[18%] bg-white rounded-2xl p-4 ">
+    <div className="w-[18%] bg-white rounded-2xl p-4 hidden xl:flex flex-col ">
       <h2 className="text-xl  py-4 text-center font-inter">Settings</h2>
       <div className="flex flex-col gap-4 ">
         {settingsItems.map((item) => (

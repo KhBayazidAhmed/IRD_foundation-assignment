@@ -3,7 +3,7 @@ import { navBarIcons } from "@/config/nav";
 
 export default function NavBar() {
   return (
-    <div className="bg-white w-[100px] rounded-3xl px-4 flex flex-col justify-between h-[90vh] py-7 items-center overflow-y-auto gap-7">
+    <div className="bg-white hidden  w-[100px] rounded-3xl px-4  xl:flex flex-col justify-between h-[90vh] py-7 items-center overflow-y-auto gap-7">
       <Image
         width={50}
         height={50}
