@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { use, useEffect } from "react";
 import Image from "next/image";
@@ -21,38 +20,43 @@ export default function SubCategories({
 }: {
   subCat: Promise<SubCategory[]>;
   dua: Promise<Dua[]>;
-
   categoryId: number;
   categoryName: string;
 }) {
-  const categories = use(subCat);
+  const subCate = use(subCat);
   const duas = use(dua);
   const dua_id = useSearchParams().get("dua_id");
-  const filteredSubCats = categories.filter((sub) => sub.cat_id === categoryId);
+  const filteredSubCats = subCate.filter((sub) => sub.cat_id === categoryId);
   const searchParams = useSearchParams();
   const subCatId = searchParams.get("subcat_id");
+
   useEffect(() => {
     if (dua_id) {
       const target = document.getElementById(`${dua_id}`);
       target?.scrollIntoView({ behavior: "smooth" });
     }
   }, [dua_id]);
+
   return (
     <div className="flex flex-col gap-2 border-l-2 border-dotted border-primary ml-3 pl-4">
       {filteredSubCats.map((sub) => (
         <div key={sub.id}>
           <div className="bg-primary translate-y-4 -translate-x-5 mt-1.5 w-1.5 rounded-full h-1.5"></div>
-          <Link
-            href={`/duas/${categoryName.replaceAll(
-              " ",
-              "_"
-            )}?cat_id=${categoryId}&subcat_id=${sub.subcat_id}`}
-            className={`text-sm font-medium ${
-              subCatId == sub.subcat_id.toString() && "text-primary"
-            } `}
+          <div
+            className="cursor-pointer"
+            onClick={() => {
+              window.history.pushState(
+                null,
+                "",
+                `/duas/${categoryName.replaceAll(
+                  " ",
+                  "_"
+                )}?cat_id=${categoryId}&subcat_id=${sub.subcat_id}`
+              );
+            }}
           >
             {sub.subcat_name_en}
-          </Link>
+          </div>
           {subCatId === sub.subcat_id.toString() && (
             <div className="flex flex-col gap-3 pt-3">
               {duas
@@ -70,21 +74,27 @@ export default function SubCategories({
                           src="/assets/icons/duaarrow.svg"
                           alt=""
                         />
-                        <Link
-                          href={`/duas/${categoryName.replaceAll(
-                            " ",
-                            "_"
-                          )}?cat_id=${categoryId}&subcat_id=${
-                            sub.subcat_id
-                          }&dua_id=${dua.dua_id}`}
-                          className={`text-sm ${
+                        <div
+                          onClick={() => {
+                            window.history.pushState(
+                              null,
+                              "",
+                              `/duas/${categoryName.replaceAll(
+                                " ",
+                                "_"
+                              )}?cat_id=${categoryId}&subcat_id=${
+                                sub.subcat_id
+                              }&dua_id=${dua.dua_id}`
+                            );
+                          }}
+                          className={`text-sm cursor-pointer ${
                             dua.dua_id.toString() === dua_id
                               ? "text-primary"
                               : "text-secondary"
                           }`}
                         >
                           {dua.dua_name_en}
-                        </Link>
+                        </div>
                       </div>
                     )
                 )}
